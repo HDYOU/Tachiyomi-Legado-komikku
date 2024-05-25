@@ -12,12 +12,14 @@ if test -f $t_file ; then
   match=`grep "$find_txt" $t_file`
   if [ -n "$match" ]; then
     sed -i "s/: MetadataSource.GetMangaId/: MetadataSource.GetMangaId, java.io.Serializable/g" $t_file
-    sed -i "s/interface MangaRepository {/interface MangaRepository: java.io.Serializable {/g" $t_file
+    sed -i "s/interface MangaRepository {/interface MangaRepository: java.io.Serializable {/g" domain/src/main/java/tachiyomi/domain/manga/repository/MangaRepository.kt
     echo ""
     echo "Fix file: $t_file"
     head -n 75 $t_file
     echo ""
   fi
 fi
+
+
 
 exit 0
