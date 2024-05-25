@@ -16,6 +16,7 @@ concurrency:
   cancel-in-progress: true
 
 env:
+  api_repo: komikku-app/komikku-preview
 
 jobs:
   trigger_preview_build:
