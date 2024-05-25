@@ -337,6 +337,7 @@ jobs:
           sh tmp_currnet_repo/data/ci-sh/set-gradle-configuration-cache.sh
 
       - name: Run Self Script
+        shell: bash
         run: |
           sh tmp_currnet_repo/data/ci-sh/run-self-script.sh
 
