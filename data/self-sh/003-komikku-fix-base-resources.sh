@@ -9,8 +9,7 @@ export HOME="$(cd "`dirname "$0"`"/..; pwd)"
 echo ""
 echo "test replace base resources ...."
 # i18n/src/commonMain/resources/MR/zh-rCN/strings.xml
-fix_txt_list=(  \
-  '<string name="action_source_search">搜索图源</string>' \
+fix_txt_list=( '<string name="action_source_search">搜索图源</string>' \
   '<string name="whats_coming">测试版本-更新日志(快)</string>' \
   '<string name="update_check_try_now">现在下载</string>' \
   '<string name="download_cache_renew_interval">下载缓存失效间隔</string>' \
