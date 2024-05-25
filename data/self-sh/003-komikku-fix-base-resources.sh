@@ -27,6 +27,9 @@ cat << EOF > $tmp_file
 <string name="invalid_downloads_cleaned">已清除无效下载</string> 
 <string name="ext_unofficial">非官方</string> 
 <string name="unofficial_extension_message">不是官方仓库的插件。</string> 
+<string name="pref_auto_update_manga_sync">阅读后更新进度</string>
+<string name="pref_update_tracking_marked_read">标记为已读时更新进度</string>
+<string name="pref_auto_sync_read_chapters">自动同步跟踪平台中的阅读章节</string>
 EOF
 sed -i '/^$/d' $tmp_file
 sed -i '/^#/d' $tmp_file
