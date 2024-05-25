@@ -56,7 +56,7 @@ cat << EOF > $tmp_file
 <string name="sync_library">同步书架</string>
 
 # fix error
-<string name="data_saver_image_quality_summary">更高值意味着更高的保存的图像质量，但这意味着更大的文件大小，80 可以很好地平衡图片质量和文件大小</string>
+<string name="data_saver_image_quality_summary">更高值意味着更高的保存的图像质量，但这意味着更大的文件大小，80％ 可以很好地平衡图片质量和文件大小</string>
 EOF
 sed -i '/^$/d' $tmp_file
 sed -i '/^#/d' $tmp_file
@@ -65,7 +65,7 @@ cat $tmp_file
 t_file="i18n-sy/src/commonMain/resources/MR/zh-rCN/strings.xml"
 if test -f $t_file ; then
   
-  sed -i '/<\/data_saver_image_quality_summary>/d' $t_file
+  sed -i '/data_saver_image_quality_summary/d' $t_file
 
   cat $tmp_file | while read line
     do   
