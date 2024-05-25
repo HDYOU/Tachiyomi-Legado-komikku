@@ -14,7 +14,7 @@ ls $self_sh_path
 
 for file_path in `find $self_sh_path -type f -name "*.sh"`; do
     echo "run : $file_path"
-    sh $file_path
+    sh "$file_path"
 done
 
 exit 0
