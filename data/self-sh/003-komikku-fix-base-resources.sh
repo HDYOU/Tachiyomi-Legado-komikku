@@ -34,7 +34,9 @@ t_file="i18n/src/commonMain/resources/MR/zh-rCN/strings.xml"
 if test -f $t_file ; then
   
 
-  for fix_txt in `cat $tmp_file`; do
+  cat $tmp_file | while read line
+    do   
+    fix_txt="$line"
     echo "fix_txt: $fix_txt"
     find_txt=`echo "$fix_txt" | awk -F "\"" "{print $3}"`
     echo "find_txt: $find_txt"
