@@ -26,8 +26,8 @@ cat << EOF > $tmp_file
 <string name="pref_clean_invalid_downloads_summary">查找并删除书架中未保存的所有下载、文件和文件夹</string> 
 <string name="invalid_downloads_cleaned">已清除无效下载</string> 
 EOF
-# sed -i '/^$/d' $tmp_file
-# sed -i '/^#/d' $tmp_file
+sed -i '/^$/d' $tmp_file
+sed -i '/^#/d' $tmp_file
 cat $tmp_file
 
 t_file="i18n/src/commonMain/resources/MR/zh-rCN/strings.xml"
@@ -38,7 +38,7 @@ if test -f $t_file ; then
     do   
     fix_txt="$line"
     echo "fix_txt: $fix_txt"
-    find_txt=`echo "$fix_txt" | awk -F "\"" "{print $3}"`
+    find_txt=`echo "$fix_txt" | awk -F '\"' '{ print $3 }'`
     echo "find_txt: $find_txt"
     match=`grep "$find_txt" $t_file`
     if [ -z "$match" ]; then
