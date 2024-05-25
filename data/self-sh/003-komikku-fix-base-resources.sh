@@ -25,6 +25,8 @@ cat << EOF > $tmp_file
 <string name="pref_clean_invalid_downloads">清除无效下载</string> 
 <string name="pref_clean_invalid_downloads_summary">查找并删除书架中未保存的所有下载、文件和文件夹</string> 
 <string name="invalid_downloads_cleaned">已清除无效下载</string> 
+<string name="ext_unofficial">非官方</string> 
+<string name="unofficial_extension_message">不是官方仓库的插件。</string> 
 EOF
 sed -i '/^$/d' $tmp_file
 sed -i '/^#/d' $tmp_file
@@ -38,7 +40,7 @@ if test -f $t_file ; then
     do   
     fix_txt="$line"
     echo "fix_txt: $fix_txt"
-    find_txt=`echo "$fix_txt" | awk -F '\"' '{ print $3 }'`
+    find_txt=`echo "$fix_txt" | awk -F '\"' '{ print $2 }'`
     echo "find_txt: $find_txt"
     match=`grep "$find_txt" $t_file`
     if [ -z "$match" ]; then
