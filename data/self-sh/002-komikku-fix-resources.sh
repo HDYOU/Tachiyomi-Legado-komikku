@@ -14,7 +14,7 @@ echo "test replace resources ...."
 t_file="i18n-sy/src/commonMain/resources/MR/zh-rCN/strings.xml"
 if test -f $t_file ; then
   # delete  </resources>
-  sed -i 's/<\/resources>/d' $t_file
+  sed -i '/<\/resources>/d' $t_file
 
   find_txt="pref_source_related_mangas"
   match=`grep "$find_txt" $t_file`
