@@ -12,8 +12,8 @@ if test -f $t_file ; then
   find_txt="^                getExtensionRepo.getAll()"
   match=`grep "$find_txt" $t_file`
   if [ -n "$match" ]; then
-    sed -ir "s/^                getExtensionRepo.getAll()/                addAll(getExtensionRepo.getAll()/" app/build.gradle.kts
-    sed -i "s/.flatten()/.flatten())/" app/build.gradle.kts
+    sed -ir "s/^                getExtensionRepo.getAll()/                addAll(getExtensionRepo.getAll()/g" app/build.gradle.kts
+    sed -i "s/.flatten()/.flatten())/g" app/build.gradle.kts
     echo ""
     echo "Fix file: $t_file"
     cat $t_file
