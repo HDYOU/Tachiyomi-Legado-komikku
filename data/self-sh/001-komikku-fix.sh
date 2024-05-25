@@ -16,7 +16,7 @@ if test -f $t_file ; then
     sed -i "s/.flatten()/.flatten())/g" $t_file
     echo ""
     echo "Fix file: $t_file"
-    cat $t_file
+    tail -n 75 $t_file
     echo ""
   fi
 fi
