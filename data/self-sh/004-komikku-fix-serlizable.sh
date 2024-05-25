@@ -15,6 +15,12 @@ if test -f $t_file ; then
     sed -i "s/    private val getManga:/    @Transient private val getManga:/g" $t_file
     sed -i "s/    private val sourcePreferences:/    @Transient private val sourcePreferences:/g" $t_file
     sed -i "s/    private val libraryPreferences:/    @Transient private val libraryPreferences:/g" $t_file
+    sed -i "s/    val mangaScreenModel:/    @Transient val mangaScreenModel:/g" $t_file
+    sed -i "s/    val onKeywordLongClick:/    @Transient val onKeywordLongClick:/g" $t_file
+   sed -i "s/    val onKeywordClick:/    @Transient val onKeywordClick:/g" $t_file
+   
+
+
 
     # sed -i "s/interface MangaRepository {/interface MangaRepository: java.io.Serializable {/g" domain/src/main/java/tachiyomi/domain/manga/repository/MangaRepository.kt
     echo ""
