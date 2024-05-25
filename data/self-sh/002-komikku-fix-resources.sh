@@ -73,7 +73,7 @@ if test -f $t_file ; then
     echo "fix_txt: $fix_txt"
     find_txt=`echo "$fix_txt" | awk -F '\"' '{ print $2 }'`
     echo "find_txt: $find_txt"
-    match=`grep "$find_txt" $t_file`
+    match=`grep "\"$find_txt\"" $t_file`
     if [ -z "$match" ]; then
       echo "$fix_txt" >> $t_file
     fi
