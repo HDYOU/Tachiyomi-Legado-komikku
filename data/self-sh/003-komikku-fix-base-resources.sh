@@ -51,6 +51,9 @@ if test -f $t_file ; then
     match=`grep "\"$find_txt\"" $t_file`
     if [ -z "$match" ]; then
       echo "$fix_txt" >> $t_file
+      echo "fix succ."
+    else
+      echo "fix Error !!!!"
     fi
   done
 
