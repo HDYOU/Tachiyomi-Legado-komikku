@@ -38,6 +38,9 @@ cat $tmp_file
 t_file="i18n/src/commonMain/resources/MR/zh-rCN/strings.xml"
 if test -f $t_file ; then
   
+  
+  echo "" >> $t_file
+
 
   cat $tmp_file | while read line
     do   

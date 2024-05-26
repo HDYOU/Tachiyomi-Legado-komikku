@@ -66,6 +66,8 @@ t_file="i18n-sy/src/commonMain/resources/MR/zh-rCN/strings.xml"
 if test -f $t_file ; then
   
   sed -i '/data_saver_image_quality_summary/d' $t_file
+  
+  echo "" >> $t_file
 
   cat $tmp_file | while read line
     do   
