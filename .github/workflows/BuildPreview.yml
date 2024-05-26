@@ -217,9 +217,6 @@ jobs:
         with:
           java-version: 17
           distribution: temurin
-
-      - name: Set up gradle
-        uses: gradle/actions/setup-gradle@v3
           
       # - name: Cache Gradle Dependencies
         # uses: actions/cache@v3.3.2
@@ -340,6 +337,9 @@ jobs:
         shell: bash
         run: |
           sh tmp_currnet_repo/data/ci-sh/run-self-script.sh
+
+      - name: Set up gradle
+        uses: gradle/actions/setup-gradle@v3
 
       - name: Build app
         run: |

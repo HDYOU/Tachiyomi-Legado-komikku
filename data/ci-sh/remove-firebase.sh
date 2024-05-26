@@ -12,22 +12,33 @@ ls /bin/sh -al
 
 echo "run path: $PWD"
 
-files_list=("build.gradle.kts" "CONTRIBUTING.md" 
-    "app/src/main/java/exh/log/CrashlyticsPrinter.kt" 
-    "gradle/sy.versions.toml" 
-    "app/src/main/java/eu/kanade/tachiyomi/crash/GlobalExceptionHandler.kt" 
-    "app/build.gradle.kts" 
-    "app/src/main/java/eu/kanade/tachiyomi/App.kt" 
-    "gradle/libs.versions.toml" 
-    "app/src/main/java/eu/kanade/tachiyomi/ui/main/MainActivity.kt" 
-    "app/proguard-rules.pro" 
-    "app/src/main/java/eu/kanade/tachiyomi/ui/setting/SettingsAdvancedController.kt" 
-)
+tmp_file="tmp_myfile.txt"
+cat << EOF > $tmp_file
+build.gradle.kts 
+CONTRIBUTING.md 
+app/src/main/java/exh/log/CrashlyticsPrinter.kt 
+gradle/sy.versions.toml 
+app/src/main/java/eu/kanade/tachiyomi/crash/GlobalExceptionHandler.kt 
+app/build.gradle.kts 
+app/src/main/java/eu/kanade/tachiyomi/App.kt 
+gradle/libs.versions.toml 
+app/src/main/java/eu/kanade/tachiyomi/ui/main/MainActivity.kt 
+app/proguard-rules.pro 
+app/src/main/java/eu/kanade/tachiyomi/ui/setting/SettingsAdvancedController.kt 
+EOF
 
-for file_path in ${files_list[*]}; do
-    echo "file_path: $file_path"
-    test -f "$file_path" && sed -i '/firebase/d' "$file_path"
-    test -f "$file_path" && sed -i '/Firebase/d' "$file_path"
+sed -i 's/ //g' $tmp_file
+sed -i '/^$/d' $tmp_file
+sed -i '/^#/d' $tmp_file
+cat $tmp_file
+
+cat $tmp_file | while read line
+do   
+    file_path=`echo $line | sed 's/ //g'`
+    if [ -e "$file_path" ]; then
+        sed -i '/firebase/d' "$file_path"
+        sed -i '/Firebase/d' "$file_path"
+    fi
 done
-
+rm -rf $tmp_file
 exit 0
