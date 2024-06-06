@@ -348,7 +348,7 @@ jobs:
           # --exclude-task checkStandardReleaseDuplicateClasses \
           # --exclude-task checkStandardReleaseAarMetadata  \
           # --warning-mode all  \
-          ./gradlew assembleStandardRelease -x test  --build-cache --parallel --no-daemon \
+          ./gradlew assembleStandardPreview -x test  --build-cache --parallel --no-daemon \
           --exclude-task :buildSrc:checkKotlinGradlePluginConfigurationErrors \
           --exclude-task checkKotlinGradlePluginConfigurationErrors \
           --exclude-task checkStandardReleaseDuplicateClasses \
