@@ -30,6 +30,9 @@ fi
 
 sed -i '/ buildTypes {/a \        val signConfig = signingConfigs.getByName("keyStore")' app/build.gradle.kts
 
+sed -i 's/signingConfigs.getByName("debug")/signConfig/g' app/build.gradle.kts
+
+
 ##
 echo "cat app/build.gradle.kts:"
 echo ""
