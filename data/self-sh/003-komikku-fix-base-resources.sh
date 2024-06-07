@@ -30,6 +30,11 @@ cat << EOF > $tmp_file
 <string name="pref_auto_update_manga_sync">阅读后更新进度</string>
 <string name="pref_update_tracking_marked_read">标记为已读时更新进度</string>
 <string name="pref_auto_sync_read_chapters">自动同步跟踪平台中的阅读章节</string>
+<string name="pref_details_page_theme">详细信息页面</string>
+<string name="pref_details_page_theme_cover_based">基于封面的详细信息页面主题</string>
+<string name="pref_theme_cover_based_style">主题样式</string>
+<string name="pref_theme_cover_based_animate">主题动画</string>
+<string name="pref_private_installer_warning">避免使用Private安装程序模式，因为它还不稳定，会导致启动/恢复应用程序非常缓慢。</string>
 EOF
 sed -i '/^$/d' $tmp_file
 sed -i '/^#/d' $tmp_file
