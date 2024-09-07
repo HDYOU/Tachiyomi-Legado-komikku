@@ -11,9 +11,12 @@ echo "run path: $PWD"
 test -f build.gradle.kts && sed -i '/libs.google.services.gradle/d' build.gradle.kts
 test -f build.gradle.kts && sed -i '/gms/d' build.gradle.kts
 test -f build.gradle.kts && sed -i '/googleServices/d' build.gradle.kts
+test -f build.gradle.kts && sed -i '/google.services/d' build.gradle.kts
+
 
 test -f app/build.gradle.kts && sed -i '/gms/d' app/build.gradle.kts
 test -f app/build.gradle.kts && sed -i '/googleServices/d' app/build.gradle.kts
+test -f app/build.gradle.kts && sed -i '/google.services/d' app/build.gradle.kts
 test -f gradle/libs.versions.toml && sed -i '/gms/d' gradle/libs.versions.toml
     
 test -f app/src/main/AndroidManifest.xml && sed -i 's/com.google.android.gms.permission.AD_ID/android.permission.QUERY_ALL_PACKAGES/g' app/src/main/AndroidManifest.xml
