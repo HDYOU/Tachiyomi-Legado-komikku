@@ -25,7 +25,7 @@ sed -i 's/?: emptySequence()/?: emptyList()/g' $t_file
 
 sed -i 's/privateExtPkgs = getPrivateExtensionDir(context)/privateExtPkgs =  runBlocking { val privateExtPkgs22 = getPrivateExtensionDir(context)/g'  $t_file
 
-sed -i 's/it.setReadOnly()/async { it.setReadOnly()/g'  $t_file
+sed -i '/?.mapNotNull {/a \async {'  $t_file
 
 sed -i '/?.filter { isPackageAnExtension(it) }/i \ }'  $t_file
 
