@@ -10,7 +10,7 @@ export HOME="$(cd "`dirname "$0"`"/..; pwd)"
 t_file="mangaLegado/build.gradle"
 if test -f $t_file ; then
 
- sed -i 's/compileOnly(libs.injekt.core)/compileOnly(libs.injekt)' $t_file
+ sed -i 's/compileOnly(libs.injekt.core)/compileOnly(libs.injekt)/g' $t_file
 
  echo "fix succ."
  echo ""
