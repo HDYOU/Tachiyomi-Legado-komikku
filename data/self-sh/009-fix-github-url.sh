@@ -10,7 +10,7 @@ echo "fix github url"
 t_file="data/src/main/java/tachiyomi/data/release/ReleaseServiceImpl.kt"
 if test -f $t_file ; then
 
-    sed -i "s/https:\/\/api.github.com/https:\/\/down.npee.cn\/?https:\/\/api.github.com/g" $t_file
+    #sed -i "s/https:\/\/api.github.com/https:\/\/down.npee.cn\/?https:\/\/api.github.com/g" $t_file
 
     echo ""
     echo "Fix file: $t_file"
