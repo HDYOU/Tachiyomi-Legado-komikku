@@ -41,4 +41,14 @@ do
     fi
 done
 rm -rf $tmp_file
+
+file_path="app/src/standard/java/mihon/core/firebase/FirebaseConfig.kt"
+    if [ -e "$file_path" ]; then
+        sed -i '/firebase/d' "$file_path"
+        sed -i '/Firebase/d' "$file_path"
+        sed -i '/analytics/d' "$file_path"
+        sed -i '/crashlytics/d' "$file_path"
+    fi
+head $file_path
+
 exit 0
