@@ -37,6 +37,7 @@ cat $tmp_file | while read line
 do   
     file_path=`echo $line | sed 's/ //g'`
     if [ -e "$file_path" ]; then
+        echo "find file: $file_path"
         sed -i '/firebase/d' "$file_path"
         sed -i '/Firebase/d' "$file_path"
     fi
