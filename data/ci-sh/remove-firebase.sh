@@ -25,6 +25,7 @@ gradle/libs.versions.toml
 app/src/main/java/eu/kanade/tachiyomi/ui/main/MainActivity.kt 
 app/proguard-rules.pro 
 app/src/main/java/eu/kanade/tachiyomi/ui/setting/SettingsAdvancedController.kt 
+app/src/standard/java/exh/log/CrashlyticsPrinter.kt
 EOF
 
 sed -i 's/ //g' $tmp_file
@@ -42,6 +43,7 @@ do
 done
 rm -rf $tmp_file
 
+rm -rf "app/src/standard/java/mihon/core/firebase/FirebaseConfig.kt"
 file_path="app/src/standard/java/mihon/core/firebase/FirebaseConfig.kt"
     if [ -e "$file_path" ]; then
         sed -i '/firebase/d' "$file_path"
